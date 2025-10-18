@@ -63,3 +63,10 @@ To use this application, you'll need a free API key from OpenWeatherMap:
 
 - `src/weather_ai/` - Main source code directory
 - `pyproject.toml` - Project configuration and dependencies
+
+## Running Tests
+
+To run the tests for this project, use the following command:
+```bash
+uv run python -m pytest tests/
+```
