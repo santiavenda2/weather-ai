@@ -7,3 +7,55 @@ dependencies = [
     "pydantic>=2.12.3",
     "requests>=2.31.0",
 ]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "I", # isort
+    "C9", # mccabe
+    "B", # flake8-bugbear
+    "UP", # pyupgrade
+    "YTT", # flake8-2020
+    "ANN", # flake8-annotations
+    "ASYNC", # flake8-async
+    "S", # bandit
+    "BLE", # blind except
+    "FBT", # boolean-trap
+    "A", # builtins
+    "C4", # comprehensions
+    "DTZ", # datetimez
+    "T10", # T100
+    "EM", # exception-message
+    "EXE", # executables
+    "ISC", # implicit-str-concat
+    "ICN", # import-conventions
+    "G", # logging-format
+    "PGH", # pygrep-hooks
+    "PIE", # pie
+    "PL", # pylint
+    "PT", # pytest
+    "RUF", # ruff-specific
+    "SIM", # simplify
+    "TID", # tidy-imports
+    "TRY", # tryceratops
+    "UP", # pyupgrade
+    "YTT", # flake8-2020
+]
+ignore = [
+    "PLR", # Design related pylint codes
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = [
+    "S101", # Use of assert detected
+    "PT011", # pytest.raises() should specify expected exception
+]
+"src/weather_ai/main.py" = [
+    "T201", # print found
+]

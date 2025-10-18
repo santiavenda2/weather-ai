@@ -1,11 +1,12 @@
 # Weather data models
 from typing import Optional
+
 from pydantic import BaseModel
 
 
 class WeatherData(BaseModel):
     """Structured representation of weather data from OpenWeatherMap."""
-    
+
     # Main weather information
     temperature: float
     feels_like: float
@@ -13,23 +14,23 @@ class WeatherData(BaseModel):
     temp_max: float
     pressure: int
     humidity: int
-    
+
     # Weather conditions
     description: str
     main_condition: str
-    
+
     # Wind information
     wind_speed: float
-    wind_direction: Optional[int] = None
-    
+    wind_direction: int | None = None
+
     # Additional info
-    visibility: Optional[int] = None
-    cloudiness: Optional[int] = None
-    
+    visibility: int | None = None
+    cloudiness: int | None = None
+
     # Location coordinates
     latitude: float
     longitude: float
-    
+
     # Timestamp and other metadata
     timestamp: int
     location_name: str
@@ -55,7 +56,7 @@ class WeatherData(BaseModel):
 
 class WeatherResponse(BaseModel):
     """Complete response structure for weather API."""
-    
-    data: WeatherData
+
+    data: Optional[WeatherData]
     success: bool = True
-    error_message: Optional[str] = None
+    error_message: str | None = None
