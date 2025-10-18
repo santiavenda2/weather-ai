@@ -2,21 +2,19 @@
 
 A weather application that fetches data from your current location.
 
-## Project Setup with uv
+## Setup Instructions
 
-This project uses [uv](https://docs.astral.sh/uv/) for package management. 
+To set up this project from the GitHub repository:
 
-### Installation
-
-1. Install uv (if not already installed):
+1. Clone the repository:
    ```bash
-   curl -LsSf https://astral.sh/uv/install.sh | sh
+   git clone https://github.com/santiavenda2/weather-ai.git
+   cd weather-ai
    ```
 
-2. Clone the repository:
+2. Install uv (if not already installed):
    ```bash
-   git clone <repository-url>
-   cd weather-ai
+   curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
 
 3. Install dependencies using uv:
@@ -24,12 +22,10 @@ This project uses [uv](https://docs.astral.sh/uv/) for package management.
    uv sync
    ```
 
-### Development
-
-To install in development mode with editable installs:
-```bash
-uv pip install -e .
-```
+4. Install in development mode with editable installs:
+   ```bash
+   uv pip install -e .
+   ```
 
 ### Adding New Dependencies
 
